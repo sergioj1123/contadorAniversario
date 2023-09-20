@@ -1,0 +1,62 @@
+@use "variables";
+
+.contador {
+  max-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    variables.$backGroundColor1 0%,
+    variables.$backGroundColor2 100%
+  );
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  &__time {
+    font-weight: bold;
+    font-size: 6rem;
+    line-height: 1;
+    text-align: center;
+    color: variables.$textPrimaryColor;
+  }
+
+  &__information {
+    display: flex;
+    gap: 10px;
+    background-color: variables.$textPrimaryColor;
+    padding: 5px;
+    border: 1px solid variables.$textSecondaryColor;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      &__title {
+        font-size: 1.5rem;
+      }
+      &__text {
+        font-size: 1rem;
+        max-width: 250px;
+      }
+    }
+  }
+
+  @media (max-width: 768) {
+    gap: 20px;
+    &__title {
+      font-size: 2rem;
+    }
+    &__time {
+      font-size: 3rem;
+    }
+  }
+}

@@ -35,6 +35,7 @@
     background-color: variables.$textPrimaryColor;
     padding: 5px;
     border: 1px solid variables.$textSecondaryColor;
+    border-radius: 5px;
 
     &__container {
       display: flex;

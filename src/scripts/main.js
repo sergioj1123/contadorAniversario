@@ -8,12 +8,14 @@ const contador = setInterval(() => {
 
   const totalSeconds = (eventDate - correntDate) / 1000;
 
-  const days = Math.floor(totalSeconds / 3600 / 24);
-  const hours = Math.floor(totalSeconds / 3600) % 24;
-  const minutes = Math.floor(totalSeconds / 60) % 60;
-  const seconds = Math.floor(totalSeconds) % 60;
+  if (totalSeconds > 0) {
+    const days = Math.floor(totalSeconds / 3600 / 24);
+    const hours = Math.floor(totalSeconds / 3600) % 24;
+    const minutes = Math.floor(totalSeconds / 60) % 60;
+    const seconds = Math.floor(totalSeconds) % 60;
 
-  //   console.log(days, hours, minutes, seconds);
-
-  contadorDOM.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+    contadorDOM.innerHTML = `${days}D ${hours}H ${minutes}M ${seconds}S`;
+  } else {
+    contadorDOM.innerHTML = `Só no próximo ano!`;
+  }
 }, 1000);
